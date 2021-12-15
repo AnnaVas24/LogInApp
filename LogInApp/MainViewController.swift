@@ -22,6 +22,10 @@ class MainViewController: UIViewController {
         let welcomeVC = segue.destination as! WelcomeViewController
         welcomeVC.welcomeLabelText = "Welcome, \(userName)!"
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super .touchesBegan(touches, with: event)
+    }
+    
     @IBAction func logInButton() {
         if userNameTF.text == "" || passwordTF.text == "" {
             showAlert(title: "Ooops!", message: "Please enter your User Name and password")
@@ -40,6 +44,10 @@ class MainViewController: UIViewController {
         showAlert(title: "Ooops!", message: "Your password is Password ☺️")
     }
     
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        userNameTF.text = ""
+        passwordTF.text = ""
+    }
 }
 
 // MARK: - Private Methods

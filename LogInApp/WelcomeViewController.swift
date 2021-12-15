@@ -17,10 +17,5 @@ class WelcomeViewController: UIViewController {
 
         welcomeLabel.text = welcomeLabelText
     }
-    
-
-    @IBAction func logOutButton() {
         
-    }
-    
 }
