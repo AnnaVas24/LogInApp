@@ -8,13 +8,19 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
-
+    @IBOutlet weak var welcomeLabel: UILabel!
+    
+    var welcomeLabelText = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        welcomeLabel.text = welcomeLabelText
     }
     
 
-
+    @IBAction func logOutButton() {
+        
+    }
+    
 }

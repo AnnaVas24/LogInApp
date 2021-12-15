@@ -38,7 +38,7 @@
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="logInButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="KMs-D4-aKr"/>
-                                    <segue destination="aur-RH-y67" kind="presentation" id="2tW-Iq-m8I"/>
+                                    <segue destination="aur-RH-y67" kind="presentation" identifier="goToWelcome" id="2tW-Iq-m8I"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jb0-sa-aAL">
@@ -113,6 +113,9 @@
                                 <state key="normal" title="Log Out">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="logOutButton" destination="aur-RH-y67" eventType="touchUpInside" id="Fzv-io-tFE"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="hand.wave.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rEr-na-ncp">
                                 <rect key="frame" x="150" y="201.5" width="109" height="115"/>
@@ -136,6 +139,9 @@
                             <constraint firstItem="K9a-3m-y6L" firstAttribute="top" secondItem="b7O-lH-O1O" secondAttribute="top" constant="119" id="z8g-mY-eSR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="K9a-3m-y6L" id="4XE-vI-tga"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rcy-mO-sVc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

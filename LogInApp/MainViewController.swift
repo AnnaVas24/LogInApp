@@ -11,14 +11,25 @@ class MainViewController: UIViewController {
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
+    let userName = "Name"
+    let userPassword = "Password"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let welcomeVC = segue.destination as! WelcomeViewController
+        welcomeVC.welcomeLabelText = "Welcome, \(userName)!"
+    }
     @IBAction func logInButton() {
         if userNameTF.text == "" || passwordTF.text == "" {
             showAlert(title: "Ooops!", message: "Please enter your User Name and password")
+        } else if  userNameTF.text == userName && passwordTF.text == userPassword {
+            performSegue(withIdentifier: "goToWelcome", sender: self)
+            
+        } else {
+            showAlert(title: "The data is wrong!", message: "Please enter correct data")
         }
     }
     
