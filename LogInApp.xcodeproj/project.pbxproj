@@ -58,16 +58,56 @@
 		51CCD0DE27692D7500D32A05 /* LogInApp */ = {
 			isa = PBXGroup;
 			children = (
-				51CCD0DF27692D7500D32A05 /* AppDelegate.swift */,
-				51CCD0E127692D7500D32A05 /* SceneDelegate.swift */,
-				51CCD0E327692D7500D32A05 /* MainViewController.swift */,
-				51CCD0F32769414200D32A05 /* WelcomeViewController.swift */,
-				51CCD0E527692D7500D32A05 /* Main.storyboard */,
-				51CCD0E827692D7500D32A05 /* Assets.xcassets */,
-				51CCD0EA27692D7500D32A05 /* LaunchScreen.storyboard */,
-				51CCD0ED27692D7500D32A05 /* Info.plist */,
+				51CCD0F6276CC48100D32A05 /* Models */,
+				51CCD0F9276CC50800D32A05 /* SupportFiles */,
+				51CCD0F5276CC42D00D32A05 /* ViewControllers */,
+				51CCD0F7276CC4AD00D32A05 /* Storyboards */,
+				51CCD0F8276CC4E000D32A05 /* Resources */,
 			);
 			path = LogInApp;
+			sourceTree = "<group>";
+		};
+		51CCD0F5276CC42D00D32A05 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				51CCD0E327692D7500D32A05 /* MainViewController.swift */,
+				51CCD0F32769414200D32A05 /* WelcomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		51CCD0F6276CC48100D32A05 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		51CCD0F7276CC4AD00D32A05 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				51CCD0E527692D7500D32A05 /* Main.storyboard */,
+				51CCD0EA27692D7500D32A05 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		51CCD0F8276CC4E000D32A05 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				51CCD0E827692D7500D32A05 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		51CCD0F9276CC50800D32A05 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				51CCD0DF27692D7500D32A05 /* AppDelegate.swift */,
+				51CCD0E127692D7500D32A05 /* SceneDelegate.swift */,
+				51CCD0ED27692D7500D32A05 /* Info.plist */,
+			);
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,7 +334,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LogInApp/Info.plist;
+				INFOPLIST_FILE = LogInApp/SupportFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -322,7 +362,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LogInApp/Info.plist;
+				INFOPLIST_FILE = LogInApp/SupportFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
