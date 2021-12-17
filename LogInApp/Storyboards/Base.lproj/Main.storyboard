@@ -3,6 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -89,7 +90,7 @@
             </objects>
             <point key="canvasLocation" x="-2026" y="-42"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="ixP-hx-bvv">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="aur-RH-y67" customClass="WelcomeViewController" customModule="LogInApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -139,7 +140,9 @@
                             <constraint firstItem="K9a-3m-y6L" firstAttribute="top" secondItem="b7O-lH-O1O" secondAttribute="top" constant="119" id="z8g-mY-eSR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="olW-x6-Y9E"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="olW-x6-Y9E">
+                        <imageReference key="image" image="person.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="welcomeLabel" destination="K9a-3m-y6L" id="4XE-vI-tga"/>
                     </connections>
@@ -152,23 +155,29 @@
         <!--Hello-->
         <scene sceneID="F0Z-Qd-rCD">
             <objects>
-                <viewController id="ZlA-k6-3av" sceneMemberID="viewController">
+                <viewController id="ZlA-k6-3av" customClass="MoreInfoViewController" customModule="LogInApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Baw-jJ-jQR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MK0-eO-yFR">
-                                <rect key="frame" x="133" y="315" width="108" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MK0-eO-yFR">
+                                <rect key="frame" x="133" y="315.5" width="109" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="MORE INFO">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
                                 <connections>
                                     <segue destination="ggI-gu-QlA" kind="show" id="32P-Ik-hYv"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yox-YL-TQ3"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="MK0-eO-yFR" firstAttribute="centerY" secondItem="Baw-jJ-jQR" secondAttribute="centerY" id="0Jz-Wc-Rf0"/>
+                            <constraint firstItem="MK0-eO-yFR" firstAttribute="centerX" secondItem="Baw-jJ-jQR" secondAttribute="centerX" id="iIR-SO-5vz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hello" id="0mO-Js-aFB"/>
                 </viewController>
@@ -176,21 +185,69 @@
             </objects>
             <point key="canvasLocation" x="408.80000000000001" y="313.49325337331339"/>
         </scene>
-        <!--View Controller-->
+        <!--Personal Info View Controller-->
         <scene sceneID="RJm-rs-nsZ">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="ggI-gu-QlA" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="ggI-gu-QlA" customClass="PersonalInfoViewController" customModule="LogInApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bAg-O5-Eg0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Iyo-Yj-IME">
+                                <rect key="frame" x="50" y="164" width="102" height="240"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UW8-9W-zrU">
+                                        <rect key="frame" x="0.0" y="0.0" width="102" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" systemColor="tintColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Fy-uy-vO1">
+                                        <rect key="frame" x="0.0" y="54" width="102" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" systemColor="tintColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Languages:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBp-C2-3XC">
+                                        <rect key="frame" x="0.0" y="108" width="102" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" systemColor="tintColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hobbies:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIn-pS-LYN">
+                                        <rect key="frame" x="0.0" y="162" width="102" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" systemColor="tintColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="035-jE-ldO">
+                                        <rect key="frame" x="0.0" y="216" width="102" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" systemColor="tintColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="kG2-aR-E0t"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="Iyo-Yj-IME" firstAttribute="top" secondItem="kG2-aR-E0t" secondAttribute="top" constant="120" id="dUu-nn-dcQ"/>
+                            <constraint firstItem="Iyo-Yj-IME" firstAttribute="leading" secondItem="kG2-aR-E0t" secondAttribute="leading" constant="50" id="qhJ-fe-FDj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SHD-r4-hR2"/>
+                    <connections>
+                        <outlet property="ageLabel" destination="UW8-9W-zrU" id="L7o-oB-zUY"/>
+                        <outlet property="cityLabel" destination="3Fy-uy-vO1" id="IWN-7W-myZ"/>
+                        <outlet property="hobbiesLabel" destination="cIn-pS-LYN" id="ljI-88-rEL"/>
+                        <outlet property="languagesLabel" destination="lBp-C2-3XC" id="J9k-Wb-SJZ"/>
+                        <outlet property="petLabel" destination="035-jE-ldO" id="LS9-UF-ayY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ej7-Ef-nvr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1140" y="312.59370314842579"/>
+            <point key="canvasLocation" x="1263" y="313"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LgM-Li-kFf">
@@ -198,6 +255,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="3Rl-BH-ABc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4iv-we-FuD">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -210,15 +268,20 @@
             </objects>
             <point key="canvasLocation" x="-1317.3913043478262" y="-42.1875"/>
         </scene>
-        <!--Item-->
+        <!--User-->
         <scene sceneID="dLZ-Ej-GCE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dk9-Qz-A1b" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="VHq-MJ-o79"/>
+                    <tabBarItem key="tabBarItem" title="User" id="VHq-MJ-o79">
+                        <imageReference key="image" image="person.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="STY-pC-GuF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -232,6 +295,7 @@
     </scenes>
     <resources>
         <image name="hand.wave.fill" catalog="system" width="128" height="128"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -240,6 +304,9 @@
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

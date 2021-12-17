@@ -11,20 +11,30 @@ class MainViewController: UIViewController {
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
-    private let userName = "Name"
-    private let userPassword = "Password"
+    private let user = User.getUser()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let tabBarController = segue.destination as! UITabBarController
-        let viewControllers = [tabBarController.viewControllers]
+        
+        let viewControllers = tabBarController.viewControllers!
         
         for viewController in viewControllers {
             if let welcomeVC = viewController as? WelcomeViewController {
-                welcomeVC.welcomeLabel.text = "Welcome, \(userName)"
+                welcomeVC.user = user.person.name
+            } else if let navigationVC = viewController as? UINavigationController {
+                let moreInfoVC = navigationVC.topViewController as! MoreInfoViewController
+                moreInfoVC.userName = user.person.name
+                moreInfoVC.userSurname = user.person.surname
+                moreInfoVC.age = user.person.age
+                moreInfoVC.city = user.person.city
+                moreInfoVC.languages = user.person.languages
+                moreInfoVC.hobbies = user.person.hobbies
+                moreInfoVC.pet = user.person.pet
             }
         }
         
     }
+   
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super .touchesBegan(touches, with: event)
         view.endEditing(true)
@@ -33,8 +43,8 @@ class MainViewController: UIViewController {
     @IBAction func logInButton() {
         if userNameTF.text == "" || passwordTF.text == "" {
             showAlert(title: "Ooops!", message: "Please enter your User Name and password")
-        } else if  userNameTF.text == userName && passwordTF.text == userPassword {
-            performSegue(withIdentifier: "goToWelcome", sender: self)
+        } else if  userNameTF.text == user.userName && passwordTF.text == user.password {
+            performSegue(withIdentifier: "goToWelcome", sender: nil)
             
         } else {
             showAlert(title: "The data is wrong!", message: "Please enter correct data")
