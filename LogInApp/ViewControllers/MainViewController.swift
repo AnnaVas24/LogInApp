@@ -23,13 +23,7 @@ class MainViewController: UIViewController {
                 welcomeVC.user = user.person.name
             } else if let navigationVC = viewController as? UINavigationController {
                 let moreInfoVC = navigationVC.topViewController as! MoreInfoViewController
-                moreInfoVC.userName = user.person.name
-                moreInfoVC.userSurname = user.person.surname
-                moreInfoVC.age = user.person.age
-                moreInfoVC.city = user.person.city
-                moreInfoVC.languages = user.person.languages
-                moreInfoVC.hobbies = user.person.hobbies
-                moreInfoVC.pet = user.person.pet
+                moreInfoVC.user = user
             }
         }
         
